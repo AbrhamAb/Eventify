@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../../Styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.eventmanager.MyRegisteredEventController">
+
+   <!-- Top Navigation Bar -->
+   <top>
+      <HBox fx:id="navBar" styleClass="R-navBar" stylesheets="@../../Styles/style.css">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="181.0">
+               <image>
+                  <Image url="@../../images/logo-transparent.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="R-titleLabel" text="Event Manager" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="welcomeLabel" styleClass="R-welcomeLabel" text="Hello, User!" />
+            <MenuButton fx:id="menuButton" styleClass="R-menuButton" text="Menu">
+               <items>
+                  <MenuItem fx:id="homeMenuItem" onAction="#onMenuClick" text="Home" />
+                  <MenuItem fx:id="browseEventsMenuItem" onAction="#onMenuClick" text="Available Events" />
+                  <MenuItem fx:id="myRegisteredMenuItem" onAction="#onMenuClick" text="Registered Events" />
+                  <MenuItem fx:id="accountMenuItem" onAction="#onMenuClick" text="Account" />
+                  <SeparatorMenuItem />
+                  <MenuItem fx:id="adminEventBtn" onAction="#onMenuClick" text="Manage Events (Admin)" />
+                  <MenuItem fx:id="adminOpsBtn" onAction="#onMenuClick" text="Admin Operations" />
+                  <SeparatorMenuItem />
+                  <MenuItem fx:id="aboutMenuItem" onAction="#onMenuClick" text="About Us" />
+               </items>
+            </MenuButton>
+         </children>
+      </HBox>
+   </top>
+
+   <!-- Center Content -->
+   <center>
+      <ScrollPane fitToWidth="true" prefHeight="500.0" styleClass="R-scrollPane" stylesheets="@../../Styles/style.css">
+         <VBox styleClass="R-container" stylesheets="@../../Styles/style.css">
+            <children>
+               <Label styleClass="R-title" stylesheets="@../../Styles/style.css" text="My Registered Events" />
+               <FlowPane fx:id="eventFlowPane" styleClass="R-flowPane" stylesheets="@../../Styles/style.css" />
+            </children>
+         </VBox>
+      </ScrollPane>
+   </center>
+
+</BorderPane>

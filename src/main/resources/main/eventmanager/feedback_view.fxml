@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="main.eventmanager.FeedbackViewController"
+            styleClass="DContentArea"
+            stylesheets="@../../Styles/style.css">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          styleClass="D-feedback-container">
+
+        <Label text="User Feedback" styleClass="D-feedback-title"/>
+
+        <TableView fx:id="feedbackTable" prefHeight="500" prefWidth="850" styleClass="D-feedback-table">
+            <columns>
+                <TableColumn fx:id="usernameCol" text="Username" prefWidth="150"/>
+                <TableColumn fx:id="messageCol" text="Message" prefWidth="400"/>
+                <TableColumn fx:id="ratingCol" text="Rating" prefWidth="100"/>
+                <TableColumn fx:id="dateCol" text="Submitted On" prefWidth="200"/>
+            </columns>
+        </TableView>
+
+    </VBox>
+</AnchorPane>
